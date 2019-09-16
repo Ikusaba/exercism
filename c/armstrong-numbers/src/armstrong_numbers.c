@@ -13,11 +13,24 @@ unsigned numDigits(const unsigned n) {
         }
 
 int isArmstrongNumber(int num){
+		
+	int c, sum, t;
+	int digitos = numDigits(num);
+	char n[digitos] = num;
+	sum = c = 0;
 
-	int cen = num/100;
-	int dez = (num%100)/10;
-	int uni = (num%100)%10;
-	int nDigits = numDigits(num);
+	
+	printf("%s", n);
 
-	return (num == (pow(cen, nDigits) + pow(dez, nDigits)+ pow(uni, nDigits)) ? true : false);
+	return (num == digitos ? true : false);
 }
+
+int main(void){
+	int num;
+	
+	scanf("%d", &num);
+
+	printf("%d\n",isArmstrongNumber(num));
+	return 0;
+}
+
